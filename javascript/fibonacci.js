@@ -1,6 +1,22 @@
 function fibonacci(num) {
-  // type your code here
+  if (num < 2) {
+    return num;
+  }
+
+  let previousVals = [0, 1]
+
+  for (let i = 0; i < num-1; ++i) {
+    const newSum = previousVals[0] + previousVals[1];
+    previousVals = [previousVals[1], newSum];
+  }
+
+  return previousVals[1];
 }
+
+//takes in a number as an argument
+//for each number, add together all previous numbers (which is n value)
+//returns n value
+
 
 if (require.main === module) {
   // add your own tests in here
